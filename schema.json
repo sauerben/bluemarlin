@@ -1,0 +1,202 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "$id": "schema.json",
+  "$defs": {
+    "uuid": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{8}-[a-f0-9]{4}-4[a-f0-9]{3}-[89aAbB][a-f0-9]{3}-[a-f0-9]{12}$"
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^([a-z][a-z0-9]*)(-[a-z0-9]+)*$"
+    },
+    "label": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "options": {
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "type": "object",
+        "properties": {
+          "uuid": {
+            "$ref": "#/$defs/uuid"
+          },
+          "label": {
+            "$ref": "#/$defs/label"
+          },
+          "value": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false,
+        "required": ["uuid", "label", "value"]
+      }
+    }
+  },
+  "title": "Makaira component fields",
+  "description": "an unofficial representation of component editor fields",
+  "type": "array",
+  "items": {
+    "properties": {
+      "uuid": {
+        "$ref": "#/$defs/uuid"
+      },
+      "id": {
+        "$ref": "#/$defs/id"
+      },
+      "label": {
+        "$ref": "#/$defs/label"
+      },
+      "description": {
+        "$ref": "#/$defs/description"
+      }
+    },
+    "oneOf": [
+      {
+        "type": "object",
+        "properties": {
+          "type": {
+            "enum": ["text", "richtext"]
+          },
+          "defaultValue": {
+            "type": "string"
+          }
+        }
+      },
+      {
+        "type": "object",
+        "properties": {
+          "type": {
+            "const": "number"
+          },
+          "defaultValue": {
+            "type": "number"
+          }
+        }
+      },
+      {
+        "type": "object",
+        "properties": {
+          "type": {
+            "const": "file"
+          }
+        }
+      },
+      {
+        "type": "object",
+        "properties": {
+          "type": {
+            "const": "checkbox"
+          },
+          "defaultValue": {
+            "type": "boolean"
+          }
+        }
+      },
+      {
+        "type": "object",
+        "properties": {
+          "type": {
+            "const": "select"
+          },
+          "options": {
+            "$ref": "#/$defs/options"
+          },
+          "defaultValue": {
+            "type": "string"
+          }
+        },
+        "required": ["options"]
+      },
+      {
+        "type": "object",
+        "properties": {
+          "type": {
+            "const": "multiselect"
+          },
+          "options": {
+            "$ref": "#/$defs/options"
+          },
+          "defaultValue": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": ["options"]
+      },
+      {
+        "type": "object",
+        "properties": {
+          "type": {
+            "const": "object"
+          },
+          "properties": {
+            "$ref": "#"
+          }
+        }
+      },
+      {
+        "type": "object",
+        "properties": {
+          "type": {
+            "const": "array"
+          },
+          "childConfig": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "$ref": "#/$defs/uuid"
+              },
+              "type": {
+                "enum": ["text"]
+              }
+            },
+            "required": ["id", "type"],
+            "additionalProperties": false
+          }
+        },
+        "required": ["childConfig"]
+      },
+      {
+        "type": "object",
+        "properties": {
+          "type": {
+            "const": "documents"
+          },
+          "documentType": {
+            "type": "string",
+            "enum": ["product", "link", "searchredirect", "page"]
+          },
+          "defaultValue": false
+        },
+        "required": ["documentType"]
+      },
+      {
+        "type": "object",
+        "properties": {
+          "type": {
+            "enum": ["stream", "colorpicker"]
+          }
+        }
+      },
+      {
+        "type": "object",
+        "properties": {
+          "type": {
+            "const": "hotspot"
+          },
+          "properties": {
+            "$ref": "#"
+          }
+        }
+      }
+    ],
+    "required": ["uuid", "id", "type"]
+  }
+}
