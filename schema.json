@@ -18,7 +18,6 @@
     },
     "options": {
       "type": "array",
-      "minItems": 2,
       "items": {
         "type": "object",
         "properties": {
@@ -33,7 +32,17 @@
           }
         },
         "additionalProperties": false,
-        "required": ["uuid", "label", "value"]
+        "required": ["uuid", "label", "value"],
+        "defaultSnippets": [
+          {
+            "label": "option",
+            "body": {
+              "uuid": "$UUID",
+              "label": "${1/(.*)/${1:/capitalize}/}",
+              "value": "${1}"
+            }
+          }
+        ]
       }
     }
   },
@@ -43,7 +52,14 @@
   "items": {
     "properties": {
       "uuid": {
-        "$ref": "#/$defs/uuid"
+        "$ref": "#/$defs/uuid",
+        "defaultSnippets": [
+          {
+            "label": "uuid",
+            "description": "generate a version 4 UUID",
+            "body": "$UUID"
+          }
+        ]
       },
       "id": {
         "$ref": "#/$defs/id"
@@ -65,7 +81,27 @@
           "defaultValue": {
             "type": "string"
           }
-        }
+        },
+        "defaultSnippets": [
+          {
+            "label": "text",
+            "body": {
+              "uuid": "$UUID",
+              "id": "${1/ /-/g}",
+              "label": "${1/(.*)/${1:/capitalize}/}",
+              "type": "text"
+            }
+          },
+          {
+            "label": "richtext",
+            "body": {
+              "uuid": "$UUID",
+              "id": "${1/ /-/g}",
+              "label": "${1/(.*)/${1:/capitalize}/}",
+              "type": "richtext"
+            }
+          }
+        ]
       },
       {
         "type": "object",
@@ -76,7 +112,18 @@
           "defaultValue": {
             "type": "number"
           }
-        }
+        },
+        "defaultSnippets": [
+          {
+            "label": "number",
+            "body": {
+              "uuid": "$UUID",
+              "id": "${1/ /-/g}",
+              "label": "${1/(.*)/${1:/capitalize}/}",
+              "type": "number"
+            }
+          }
+        ]
       },
       {
         "type": "object",
@@ -84,7 +131,18 @@
           "type": {
             "const": "file"
           }
-        }
+        },
+        "defaultSnippets": [
+          {
+            "label": "file",
+            "body": {
+              "uuid": "$UUID",
+              "id": "${1/ /-/g}",
+              "label": "${1/(.*)/${1:/capitalize}/}",
+              "type": "file"
+            }
+          }
+        ]
       },
       {
         "type": "object",
@@ -95,7 +153,20 @@
           "defaultValue": {
             "type": "boolean"
           }
-        }
+        },
+        "required": ["defaultValue"],
+        "defaultSnippets": [
+          {
+            "label": "checkbox",
+            "body": {
+              "uuid": "$UUID",
+              "id": "${1/ /-/g}",
+              "label": "${1/(.*)/${1:/capitalize}/}",
+              "type": "checkbox",
+              "defaultValue": false
+            }
+          }
+        ]
       },
       {
         "type": "object",
@@ -110,7 +181,19 @@
             "type": "string"
           }
         },
-        "required": ["options"]
+        "required": ["options"],
+        "defaultSnippets": [
+          {
+            "label": "select",
+            "body": {
+              "uuid": "$UUID",
+              "id": "${1/ /-/g}",
+              "label": "${1/(.*)/${1:/capitalize}/}",
+              "type": "select",
+              "options": ["^${2}"]
+            }
+          }
+        ]
       },
       {
         "type": "object",
@@ -128,7 +211,19 @@
             }
           }
         },
-        "required": ["options"]
+        "required": ["options"],
+        "defaultSnippets": [
+          {
+            "label": "multiselect",
+            "body": {
+              "uuid": "$UUID",
+              "id": "${1/ /-/g}",
+              "label": "${1/(.*)/${1:/capitalize}/}",
+              "type": "multiselect",
+              "options": ["^${2}"]
+            }
+          }
+        ]
       },
       {
         "type": "object",
@@ -139,7 +234,20 @@
           "properties": {
             "$ref": "#"
           }
-        }
+        },
+
+        "defaultSnippets": [
+          {
+            "label": "object",
+            "body": {
+              "uuid": "$UUID",
+              "id": "${1/ /-/g}",
+              "label": "${1/(.*)/${1:/capitalize}/}",
+              "type": "object",
+              "properties": ["^${2}"]
+            }
+          }
+        ]
       },
       {
         "type": "object",
@@ -154,14 +262,31 @@
                 "$ref": "#/$defs/uuid"
               },
               "type": {
-                "enum": ["text"]
+                "enum": ["text", "number", "file", "object"]
               }
             },
-            "required": ["id", "type"],
-            "additionalProperties": false
+            "required": ["id", "type"]
+          },
+          "properties": {
+            "$ref": "#"
           }
         },
-        "required": ["childConfig"]
+        "required": ["childConfig"],
+        "defaultSnippets": [
+          {
+            "label": "array",
+            "body": {
+              "uuid": "$UUID",
+              "id": "${1/ /-/g}",
+              "label": "${1/(.*)/${1:/capitalize}/}",
+              "type": "array",
+              "childConfig": {
+                "id": "$UUID",
+                "type": "${2|text,number,file,object|}"
+              }
+            }
+          }
+        ]
       },
       {
         "type": "object",
@@ -175,7 +300,19 @@
           },
           "defaultValue": false
         },
-        "required": ["documentType"]
+        "required": ["documentType"],
+        "defaultSnippets": [
+          {
+            "label": "documents",
+            "body": {
+              "uuid": "$UUID",
+              "id": "${1/ /-/g}",
+              "label": "${1/(.*)/${1:/capitalize}/}",
+              "type": "documents",
+              "documentType": "${2|product,link,searchredirect,page|}"
+            }
+          }
+        ]
       },
       {
         "type": "object",
@@ -183,7 +320,27 @@
           "type": {
             "enum": ["stream", "colorpicker"]
           }
-        }
+        },
+        "defaultSnippets": [
+          {
+            "label": "stream",
+            "body": {
+              "uuid": "$UUID",
+              "id": "${1/ /-/g}",
+              "label": "${1/(.*)/${1:/capitalize}/}",
+              "type": "stream"
+            }
+          },
+          {
+            "label": "colorpicker",
+            "body": {
+              "uuid": "$UUID",
+              "id": "${1/ /-/g}",
+              "label": "${1/(.*)/${1:/capitalize}/}",
+              "type": "colorpicker"
+            }
+          }
+        ]
       },
       {
         "type": "object",
@@ -194,7 +351,19 @@
           "properties": {
             "$ref": "#"
           }
-        }
+        },
+        "defaultSnippets": [
+          {
+            "label": "hotspot",
+            "body": {
+              "uuid": "$UUID",
+              "id": "${1/ /-/g}",
+              "label": "${1/(.*)/${1:/capitalize}/}",
+              "type": "hotspot",
+              "properties": ["^${2}"]
+            }
+          }
+        ]
       }
     ],
     "required": ["uuid", "id", "type"]

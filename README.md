@@ -6,9 +6,9 @@ a code-first component editor for [Makaira](https://makaira.io)
 
 screenshots (animated) here
 
-- [x] schema validation
-- [ ] auto completion
-- [ ] code snippets
+- [x] [schema validation](https://code.visualstudio.com/docs/languages/json#_json-schemas-and-settings)
+- [x] [default snippets](https://code.visualstudio.com/docs/languages/json#_define-snippets-in-json-schemas)
+- [x] auto completion
 - [ ] tree view of components
 - [ ] variants generation
 - [ ] field migrations
@@ -20,6 +20,13 @@ screenshots (animated) here
 As of now, you're still required to [use JWTs to authenticate with your Makaira account](https://docs.makaira.io/reference/authentication#json-web-token-jwt).
 
 <!--
+
+## Snippets
+
+Blue marlin comes with several snippets. In order to use them, you've to hit Ctrl+Space all the time. It is recommended... editor.tabCompletion -> on
+
+https://code.visualstudio.com/docs/editor/userdefinedsnippets
+
 ## Extension Settings
 
 Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
