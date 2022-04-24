@@ -9,17 +9,8 @@
   "categories": [
     "Other"
   ],
-  "activationEvents": [
-    "onCommand:bluemarlin.helloWorld"
-  ],
   "main": "./out/extension.js",
   "contributes": {
-    "commands": [
-      {
-        "command": "bluemarlin.helloWorld",
-        "title": "Hello World"
-      }
-    ],
     "jsonValidation": [
       {
         "fileMatch": "*.component.json",
