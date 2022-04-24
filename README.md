@@ -14,10 +14,30 @@ a _code-first_ component editor for [Makaira](https://makaira.io)
 - [ ] an interactive drag & drop component builder
 - [ ] [use JWTs to authenticate with your Makaira account](https://docs.makaira.io/reference/authentication#json-web-token-jwt) to push & pull components
 
+## Usage
+
+The schema will automatically match all files ending with `*.component.json`,
+e.g. `banner.component.json` or `discovery-image.component.json`.
+
 ## Snippets
 
 Blue marlin comes with several builtin snippets. In order to use them, you need to hit `Ctrl+Space` all the time.
 Therefore it is recommended to enable tab-completion and set `"editor.tabCompletion: on"` in your [user or workspace settings](https://code.visualstudio.com/docs/getstarted/settings).
+This enables you to [type a snippet prefix](https://code.visualstudio.com/docs/editor/userdefinedsnippets) and press `Tab` to insert a snippet.
+
+- text
+- richtext
+- number
+- file
+- checkbox
+- select
+- multiselect
+- object
+- array
+- documents
+- stream
+- colorpicker
+- hotspot
 
 ## Release Notes
 
