@@ -32,14 +32,14 @@
           }
         },
         "additionalProperties": false,
-        "required": ["uuid", "label", "value"],
+        "required": ["uuid", "value", "label"],
         "defaultSnippets": [
           {
             "label": "option",
             "body": {
               "uuid": "$UUID",
-              "label": "${1/(.*)/${1:/capitalize}/}",
-              "value": "${1}"
+              "value": "${1}",
+              "label": "${2:/capitalize}"
             }
           }
         ]
