@@ -46,7 +46,7 @@ This enables you to [type a snippet prefix](https://code.visualstudio.com/docs/e
 ### Property snippets
 
 - **uuid**: generates an UUIDv4 (required)
-- **id**: kebap-case, lowercase identifier
+- **id**: kebab-case, lowercase identifier
 - label
 - type
 - description
