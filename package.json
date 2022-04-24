@@ -3,6 +3,7 @@
   "displayName": "Blue Marlin",
   "description": "a code-first component editor for Makaira",
   "version": "1.0.0",
+  "publisher": "kllmanu",
   "engines": {
     "vscode": "^1.66.0"
   },
@@ -11,7 +12,11 @@
     "url": "https://github.com/kllmanu/bluemarlin.git"
   },
   "categories": [
+    "Snippets",
     "Other"
+  ],
+  "keywords": [
+    "makaira"
   ],
   "contributes": {
     "jsonValidation": [
