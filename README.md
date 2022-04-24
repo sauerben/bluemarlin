@@ -46,9 +46,13 @@ This enables you to [type a snippet prefix](https://code.visualstudio.com/docs/e
 - **uuid**: generates an UUIDv4 (required)
 - **id**: kebap-case, lowercase identifier
 - label
+- type
 - description
 - option: a single option for _select_ and _multiselect_ fields
+- options
+- properties
 - defaultValue
+- documentType
 
 ## Release Notes
 
