@@ -25,6 +25,8 @@ Blue marlin comes with several builtin snippets. In order to use them, you need 
 Therefore it is recommended to enable tab-completion and set `"editor.tabCompletion: on"` in your [user or workspace settings](https://code.visualstudio.com/docs/getstarted/settings).
 This enables you to [type a snippet prefix](https://code.visualstudio.com/docs/editor/userdefinedsnippets) and press `Tab` to insert a snippet.
 
+### Field snippets
+
 - text
 - richtext
 - number
@@ -38,6 +40,15 @@ This enables you to [type a snippet prefix](https://code.visualstudio.com/docs/e
 - stream
 - colorpicker
 - hotspot
+
+### Property snippets
+
+- **uuid**: generates an UUIDv4 (required)
+- **id**: kebap-case, lowercase identifier
+- label
+- description
+- option: a single option for _select_ and _multiselect_ fields
+- defaultValue
 
 ## Release Notes
 
