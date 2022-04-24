@@ -1,71 +1,31 @@
 # Blue marlin
 
-a code-first component editor for [Makaira](https://makaira.io)
+a _code-first_ component editor for [Makaira](https://makaira.io)
 
 ## Features
-
-screenshots (animated) here
 
 - [x] [schema validation](https://code.visualstudio.com/docs/languages/json#_json-schemas-and-settings)
 - [x] [default snippets](https://code.visualstudio.com/docs/languages/json#_define-snippets-in-json-schemas)
 - [x] auto completion
-- [ ] tree view of components
-- [ ] variants generation
 - [ ] field migrations
-- [ ] component previews
-- [ ] drag & drop builder
-
-## Requirements
-
-As of now, you're still required to [use JWTs to authenticate with your Makaira account](https://docs.makaira.io/reference/authentication#json-web-token-jwt).
-
-<!--
+- [ ] `variants.js` generation
+- [ ] component [tree view](https://code.visualstudio.com/api/extension-guides/tree-view)
+- [ ] component [notebooks](https://code.visualstudio.com/api/extension-guides/notebook) with preview renderer
+- [ ] an interactive drag & drop component builder
+- [ ] [use JWTs to authenticate with your Makaira account](https://docs.makaira.io/reference/authentication#json-web-token-jwt) to push & pull components
 
 ## Snippets
 
-Blue marlin comes with several snippets. In order to use them, you've to hit Ctrl+Space all the time. It is recommended... editor.tabCompletion -> on
-
-https://code.visualstudio.com/docs/editor/userdefinedsnippets
-
-## Extension Settings
-
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
-This extension contributes the following settings:
-
-- `myExtension.enable`: enable/disable this extension
-- `myExtension.thing`: set to `blah` to do something
-
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
+Blue marlin comes with several builtin snippets. In order to use them, you need to hit `Ctrl+Space` all the time.
+Therefore it is recommended to enable tab-completion and set `"editor.tabCompletion: on"` in your [user or workspace settings](https://code.visualstudio.com/docs/getstarted/settings).
 
 ## Release Notes
 
-Users appreciate release notes as you update your extension.
-
 ### 1.0.0
 
-Initial release of ...
+Initial release of Blue marlin.
 
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
----
-
-## Following extension guidelines
-
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
-
-- [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
--->
+Happy coding!
 
 ## Trivia
 
