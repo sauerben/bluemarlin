@@ -263,12 +263,12 @@
               },
               "type": {
                 "enum": ["text", "number", "file", "object"]
+              },
+              "properties": {
+                "$ref": "#"
               }
             },
             "required": ["id", "type"]
-          },
-          "properties": {
-            "$ref": "#"
           }
         },
         "required": ["childConfig"],
@@ -282,7 +282,8 @@
               "type": "array",
               "childConfig": {
                 "id": "$UUID",
-                "type": "${3|text,number,file,object|}"
+                "type": "${3|text,number,file,object|}",
+                "properties": ["^${4}"]
               }
             }
           }
