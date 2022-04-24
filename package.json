@@ -22,7 +22,7 @@
     ],
     "jsonValidation": [
       {
-        "fileMatch": "*.json",
+        "fileMatch": "*.component.json",
         "url": "./schema.json"
       }
     ]
