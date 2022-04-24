@@ -2,7 +2,7 @@
   "name": "bluemarlin",
   "displayName": "Blue Marlin",
   "description": "a code-first component editor for Makaira",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "publisher": "kllmanu",
   "icon": "icon.png",
   "engines": {
