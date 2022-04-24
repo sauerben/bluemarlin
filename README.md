@@ -1,5 +1,7 @@
 # Blue marlin
 
+![](icon.png)
+
 a _code-first_ component editor for [Makaira](https://makaira.io)
 
 ## Features
