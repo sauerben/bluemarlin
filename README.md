@@ -6,20 +6,15 @@ a _code-first_ component editor for [Makaira](https://makaira.io)
 
 ## Features
 
-- [x] [schema validation](https://code.visualstudio.com/docs/languages/json#_json-schemas-and-settings)
-- [x] [default snippets](https://code.visualstudio.com/docs/languages/json#_define-snippets-in-json-schemas)
-- [x] auto completion
-- [ ] field migrations
-- [ ] `variants.js` generation
-- [ ] component [tree view](https://code.visualstudio.com/api/extension-guides/tree-view)
-- [ ] component [notebooks](https://code.visualstudio.com/api/extension-guides/notebook) with preview renderer
-- [ ] an interactive drag & drop component builder
-- [ ] [use JWTs to authenticate with your Makaira account](https://docs.makaira.io/reference/authentication#json-web-token-jwt) to push & pull components
+- [JSON schema validation](https://code.visualstudio.com/docs/languages/json#_json-schemas-and-settings)
+- [snippet support](https://code.visualstudio.com/docs/languages/json#_define-snippets-in-json-schemas)
+- auto completion
 
 ## Usage
 
 The schema will automatically match all files ending with `*.component.json`,
 e.g. `banner.component.json` or `discovery-image.component.json`.
+Once you're done, copy the whole JSON, open the [components editor](https://docs.makaira.io/docs/components-editor) and import your component there.
 
 ## Snippets
 
@@ -63,6 +58,15 @@ This enables you to [type a snippet prefix](https://code.visualstudio.com/docs/e
 Initial release of Blue marlin.
 
 Happy coding!
+
+## Roadmap
+
+- field migrations
+- `variants.js` generation
+- component [tree view](https://code.visualstudio.com/api/extension-guides/tree-view)
+- component [notebooks](https://code.visualstudio.com/api/extension-guides/notebook) with preview renderer
+- an interactive drag & drop component builder
+- [use JWTs to authenticate with your Makaira account](https://docs.makaira.io/reference/authentication#json-web-token-jwt) to push & pull components
 
 ## Trivia
 
