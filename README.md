@@ -59,15 +59,6 @@ Initial release of Blue marlin.
 
 Happy coding!
 
-## Roadmap
-
-- field migrations
-- `variants.js` generation
-- component [tree view](https://code.visualstudio.com/api/extension-guides/tree-view)
-- component [notebooks](https://code.visualstudio.com/api/extension-guides/notebook) with preview renderer
-- an interactive drag & drop component builder
-- [use JWTs to authenticate with your Makaira account](https://docs.makaira.io/reference/authentication#json-web-token-jwt) to push & pull components
-
 ## Trivia
 
 > The [Atlantic blue marlin](https://en.wikipedia.org/wiki/Atlantic_blue_marlin) (Makaira nigricans) is a species of marlin endemic to the Atlantic Ocean. It is closely related to, and usually considered conspecific with, the Indo-Pacific blue marlin, then simply called blue marlin. Some authorities still consider both species distinct.
